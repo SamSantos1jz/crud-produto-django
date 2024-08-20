@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Cadastrar Produto</title>
+
+    <style>
+      *{
+        padding: 0;
+        margin: 0;
+        font-family: monospace;  
+      }
+      .form-principal{
+        background-color: gray;
+        padding: 20px;
+        border-radius: 8px;
+        margin-top: 20px;
+        color: white;
+      }
+      .form-principal label { 
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      
+        <form class="form-principal" action="/estoque/cadastrar_produto/" method="POST"> {% csrf_token %}
+            <h1 style="font-weight: 800; color: blue;">Cadastros de PEÇAS</h1>
+            <label for="">Nome </label>
+            <input class="form-control" type="text" name="nome" id="">
+            <br>
+            
+            <label for="">Preço </label>
+            <input  class="form-control" type="number" name="preco">
+            <br>
+            
+            <label for="">Data de chegada</label>
+            <input  class="form-control" type="text" name="validade">
+            <br>
+            
+            <label for="">Quantidade</label>
+            <input  class="form-control" type="number" name="quantidade">
+            <br>
+            
+            <input  class="btn btn-success" type="submit" value="cadastrar">
+            <input class="btn btn-warning" type="button" value="listar">
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  </body>
+</html>
