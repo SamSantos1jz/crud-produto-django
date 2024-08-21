@@ -26,18 +26,34 @@
         font-size: 20px;
       }
     </style>
+
+    <script>
+      function verificacao(){
+        const inputNome = document.getElementById("nome").value
+        const inputPreco = document.getElementById("preco").value
+        const inputQuant = document.getElementById("quantidade").value
+
+        if (inputNome !== "" && inputPreco !== "" && inputQuant !== "") {
+        alert("Itens cadastrados com sucesso!");
+        } else {
+            alert("ITENS VAZIOS!!");
+            event.preventDefault(); 
+        }
+      }
+    </script>
+  
   </head>
   <body>
     <div class="container">
       
-        <form class="form-principal" action="/estoque/cadastrar_produto/" method="POST"> {% csrf_token %}
+        <form onsubmit="verificacao()" class="form-principal" action="/estoque/cadastrar_produto/" method="POST"> {% csrf_token %}
             <h1 style="font-weight: 800; color: blue;">Cadastros de PEÇAS</h1>
             <label for="">Nome </label>
-            <input class="form-control" type="text" name="nome" id="">
+            <input class="form-control" type="text" name="nome" id="nome">
             <br>
             
             <label for="">Preço </label>
-            <input  class="form-control" type="number" name="preco">
+            <input  class="form-control" type="number" name="preco" id="preco">
             <br>
             
             <label for="">Data de chegada</label>
@@ -45,11 +61,11 @@
             <br>
             
             <label for="">Quantidade</label>
-            <input  class="form-control" type="number" name="quantidade">
+            <input  class="form-control" type="number" name="quantidade" id="quantidade">
             <br>
             
             <input  class="btn btn-success" type="submit" value="cadastrar">
-            <input class="btn btn-warning" type="button" value="listar">
+            <a href="estoque/listar_produto.html" class="btn btn-warning" type="button" value="listar" >Listar</a>
         </form>
     </div>
 

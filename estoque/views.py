@@ -31,4 +31,6 @@ def deletar_produto(request, id):
     produto = Produto.objects.get(id=id)
     produto.delete()
     return redirect('/estoque/listar_produto/')
+
+
     
