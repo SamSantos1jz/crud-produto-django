@@ -7,7 +7,6 @@ class Produto(models.Model):
     nome = models.CharField(max_length=20)
     preco = models.FloatField()
     validade= models.CharField(max_length=10)
-    quantidade=models.IntegerField()
-
+    quantidade=models.IntegerField() 
     def __str__(self):
         return self.nome

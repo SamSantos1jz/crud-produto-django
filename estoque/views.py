@@ -10,16 +10,16 @@ def cadastrar_produto(request):
     elif request.method == "POST":
         var_nome = request.POST.get('nome')
         var_preco = request.POST.get('preco')
-        var_validade = request.POST.get('validade')
+        var_valiade = request.POST.get('validade')
         var_quantidade = request.POST.get('quantidade')
         
         produto = Produto(
             nome = var_nome,
             preco = var_preco,
-            validade = var_validade,
+            validade = var_valiade,
             quantidade = var_quantidade
         )
-
+        
         produto.save()
         return redirect('/estoque/cadastrar_produto')
 
@@ -32,5 +32,3 @@ def deletar_produto(request, id):
     produto.delete()
     return redirect('/estoque/listar_produto/')
 
-
-    
