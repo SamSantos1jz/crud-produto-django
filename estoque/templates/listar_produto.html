@@ -14,6 +14,10 @@
       .container { 
         margin-top: 2%;
       }
+      .tables { 
+        border-radius: 8px;
+      }
+      
     </style>
     <script>
       function cadastrar_produto(){
@@ -22,25 +26,38 @@
 
 
     </script>
+    <style>
+      body {
+        background: radial-gradient(circle, rgba(0,0,0,0.8995798148360907) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+        /* background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%); */
+      }
+      .table {
+          border-collapse: separate;
+          border-spacing: 0;
+          border-radius: 10px; /* Ajuste o valor conforme necessário */
+          overflow: hidden; /* Garante que o radius afete as bordas */
+      }
+      .table th,
+      .table td {
+          border: 1px solid #dee2e6; /* Bordas internas da tabela */
+      }
+    </style>
   </head>
   <body>
     <div class="container search" style="display: flex;justify-content: space-between;">
-      <input class="btn btn-success" type="button" onclick="cadastrar_produto()" value="cadastrar_produto">
-      <form action="">
-
-        <input type="text" placeholder="Pesquisar...">
-        <button type="submit" style="border: none; width: 30px; height: 30px;"><i class="fa fa-search" aria-hidden="true"></i>
+      <input class="btn btn-success" type="button" onclick="cadastrar_produto()" value="cadastrar">
+      <form action="" class="form-search">
+          <input type="text" placeholder="Pesquisar..." style="border-radius: 8px 0px 0px 8px; border:none; width: 300px; height: 30px;" >
+          <button type="submit" style="border: none; border-radius: 0px 8px 8px 0px; width: 30px; height: 30px;"><i class="fa fa-search" aria-hidden="true"></i>
         </button>
       </form>
       
 
 
     </div>
-    <div class="container">
-
-      
-      <table class="table">
-        <thead class="thead-dark">
+    <div class="container"> 
+      <table class="table table-light">
+        <thead class="thead">
           <tr>
             <th scope="col">ID</th>
             <th scope="col">Nome</th>
