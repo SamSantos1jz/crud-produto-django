@@ -10,20 +10,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <title>Listar Produtos</title>
-    <style>
-      .container { 
-        margin-top: 2%;
-      }
-      .tables { 
-        border-radius: 8px;
-      }
-      
-    </style>
+    
     <script>
       function cadastrar_produto(){
          window.location.href ="/estoque/cadastrar_produto/"
       }
 
+  
 
     </script>
     <style>
@@ -31,6 +24,13 @@
         background: radial-gradient(circle, rgba(0,0,0,0.8995798148360907) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
         /* background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%); */
       }
+      .container { 
+        padding-top: 20px;
+      }
+      .tables { 
+        border-radius: 8px;
+      }
+      
       .table {
           border-collapse: separate;
           border-spacing: 0;
@@ -46,17 +46,15 @@
   <body>
     <div class="container search" style="display: flex;justify-content: space-between;">
       <input class="btn btn-success" type="button" onclick="cadastrar_produto()" value="cadastrar">
-      <form action="" class="form-search">
-          <input type="text" placeholder="Pesquisar..." style="border-radius: 8px 0px 0px 8px; border:none; width: 300px; height: 30px;" >
-          <button type="submit" style="border: none; border-radius: 0px 8px 8px 0px; width: 30px; height: 30px;"><i class="fa fa-search" aria-hidden="true"></i>
-        </button>
-      </form>
       
-
-
+          <input type="text" name="input_search" placeholder=" Pesquisar... " style="border-radius: 8px 0px 0px 8px; border:none; width: 300px; height: 30px;" >
+          <!-- <button type="submit" style="border: none; border-radius: 0px 8px 8px 0px; width: 30px; height: 30px;"><i class="fa fa-search" aria-hidden="true"></i>
+        </button> -->
+      
+    
     </div>
     <div class="container"> 
-      <table class="table table-light">
+      <table id="my_table" class="table table-light">
         <thead class="thead">
           <tr>
             <th scope="col">ID</th>

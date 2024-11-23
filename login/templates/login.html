@@ -1,3 +1,6 @@
+
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -7,7 +10,7 @@
 
     <title>Login</title>
     <style>
-        /* Estilo para o corpo e centralização */
+       
         body {
             display: flex;
             align-items: center;
@@ -19,7 +22,7 @@
       
         }
 
-        /* Container do formulário */
+        
         .login-container {
             width: 100%;
             max-width: 400px;
@@ -36,7 +39,7 @@
             color: #333;
         }
 
-        /* Estilo dos campos de entrada */
+       
         .login-container input[type="text"],
         .login-container input[type="password"] {
             width: 100%;
@@ -48,7 +51,7 @@
             box-sizing: border-box;
         }
 
-        /* Botão de login */
+       
         .login-container input[type="submit"] {
             width: 100%;
             padding: 12px;
@@ -65,7 +68,7 @@
             background-color: #45a049;
         }
 
-        /* Link de recuperação de senha */
+        
         .login-container .forgot-password {
             display: block;
             margin-top: 10px;
@@ -78,11 +81,12 @@
             text-decoration: underline;
         }
     </style>
+  
 </head>
 <body>
     <div class="login-container">
         <h2>Login</h2>
-        <form action="/login/" method="POST">
+        <form action="{% url 'login' %}" method="POST"> {% csrf_token %}
             <input type="text" name="username" placeholder="Usuário" required>
             <input type="password" name="senha" placeholder="Senha" required>
             <input type="submit" value="Entrar"></input>
