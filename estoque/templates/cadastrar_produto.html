@@ -23,6 +23,7 @@
         border-radius: 8px;
         color: white;
       }
+      
       label{
         color: black;
       }
@@ -70,23 +71,19 @@
     
     <div class="container">
         <form onsubmit="verificacao()" class="form-principal" action="/estoque/cadastrar_produto/" method="POST"> {% csrf_token %}
-             <h3 style="font-weight: 500; color: rgb(2, 2, 85);">CADASTROS DE PRODUTO</h3>
+              <h3 style="font-weight: 500; color: rgb(2, 2, 85);">CADASTROS DE PRODUTO</h3>
+              <input class="form-control" type="text" name="nome" id="nome" placeholder="Nome">
+              <br>
+              <input  class="form-control" type="number" name="preco" id="preco" placeholder="Preço">
+              <br>
+              <input  class="form-control" type="text" name="validade" placeholder="Codigo do Produto">
+              <br>
+              <input  class="form-control" type="number" name="quantidade" id="quantidade" placeholder="Quantidade">
              
-            <label for="">Nome </label>
-            <input class="form-control" type="text" name="nome" id="nome">
-            
-            <label for="">Preço </label>
-            <input  class="form-control" type="number" name="preco" id="preco">
-            
-            <label for="">Data de chegada</label>
-            <input  class="form-control" type="text" name="validade">
-          
-            <label for="">Quantidade</label>
-            <input  class="form-control" type="number" name="quantidade" id="quantidade">
-            <div class="container buttons">
-              <input class="btn btn-warning" onclick="listarProduto()" type="button" value="Listar">
-              <input  class="btn btn-success" type="submit" value="Cadastrar">
-            </div>
+              <div class="container buttons">
+                <input class="btn btn-warning" onclick="listarProduto()" type="button" value="Listar">
+                <input  class="btn btn-success" type="submit" value="Cadastrar">
+              </div>
             
         </form>
     
