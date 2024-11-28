@@ -35,3 +35,12 @@ def deletar_produto(request, id):
     produto.delete()
     return redirect('/estoque/listar_produto/')
 
+@login_required(login_url="/auth/login/")
+def pesquisar_produto(request):
+    query_pesquisa = request.GET.get('q')
+    if query_pesquisa:
+        pesquisa = Produto.objects.filter(nome__icontains=query_pesquisa)
+    else:
+        pesquisa = Produto.objects.all()
+
+    return render(request, 'listar_produto.html', {'produtos': pesquisa, 'query': query_pesquisa})
